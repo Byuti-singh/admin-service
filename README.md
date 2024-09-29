@@ -5,7 +5,7 @@ This service can be used to perform administrator task.
 
 ### Pre-requisites
 - Node, npm, mongoDB should be installed in the system.
-- Run below commands in sequence,
+### Run below commands in sequence:
 1. `npm init -y`
 2. `npm install express mongoose body-parser`
 

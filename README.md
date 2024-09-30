@@ -13,5 +13,8 @@ Node.js, HTML, CSS, JavaScript and express.js are used to build this project. Mo
 ### To Run The Service
 Use `node app.js` command to run this service.
 
+### Demo
+> Demo Link - https://admin-service-umber.vercel.app/
+
 ## Developed By
 [Byuti Singh](https://github.com/Byuti-singh)

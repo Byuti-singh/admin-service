@@ -18,7 +18,7 @@ router.post('/register', async(req, res) => {
         if (existingAddress.length !== 0) {
             addressList = existingAddress.filter(item => item.address === address);
         }
-        console.log(addressList);
+
         if (nameList.length === 0 || !nameList[0].name === name) {
             const newUser = new User({ name });
             const savedUser = await newUser.save();
@@ -30,12 +30,15 @@ router.post('/register', async(req, res) => {
             let savedAddress = "";
             if (addressList.length === 0 || !addressList[0].address === address) {
                 savedAddress = await newAddress.save();
+            } else {
+                newAddress.address = `Address ${address} already exist!`;
+                savedAddress = newAddress;
             }
 
             res.status(201).json({
                 message:'User created successfully',
-                user: savedUser,
-                address: savedAddress
+                user: savedUser.name,
+                address: savedAddress.address
             });
         } else {
             res.status(400).json({error: `User ${name} already exist!`});
